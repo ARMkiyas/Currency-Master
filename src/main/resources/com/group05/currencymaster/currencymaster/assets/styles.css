@@ -7,3 +7,14 @@
     -fx-background-color: none;
 }
 
+.swap-btn{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10000;
+    -fx-border-radius: 10000;
+    -fx-padding: 10pt;
+}
+
+.text-field{
+    -fx-text-fill: #ffffff;
+}
+
