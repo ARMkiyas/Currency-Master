@@ -1,10 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.group05.currencymaster.currencymaster.PrimaryView">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group05.currencymaster.currencymaster.PrimaryView">
+   <children>
+      <VBox prefHeight="410.0" prefWidth="375.0" styleClass="bg" stylesheets="@assets/styles.css">
+         <children>
+            <BorderPane prefHeight="39.0" prefWidth="375.0">
+               <center>
+                  <Label text="Currency master" textFill="WHITE" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </center>
+               <right>
+                  <HBox alignment="CENTER" prefHeight="39.0" prefWidth="64.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#minimizeBtn" prefHeight="26.0" prefWidth="26.0" text="-" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#closeBtn" prefHeight="26.0" prefWidth="33.0" text="X" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="100.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <JFXComboBox />
+                  <TextField />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="100.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <JFXComboBox />
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+      <GridPane alignment="CENTER" layoutY="420.0" mouseTransparent="true" prefHeight="248.0" prefWidth="375.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXButton layoutX="45.0" layoutY="9.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="2" textAlignment="CENTER" GridPane.columnIndex="1">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="170.0" layoutY="9.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="3" textAlignment="CENTER" GridPane.columnIndex="2">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="296.0" layoutY="9.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="4" textAlignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="72.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="170.0" layoutY="72.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="296.0" layoutY="72.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="7" textAlignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="134.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="170.0" layoutY="134.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="296.0" layoutY="134.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="." textAlignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="196.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="170.0" layoutY="196.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="&lt;" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="170.0" layoutY="9.0" styleClass="num-btn" stylesheets="@assets/styles.css" text="1" textAlignment="CENTER">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

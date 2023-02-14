@@ -1,6 +1,7 @@
 module com.group05.currencymaster.currencymaster {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.jfoenix;
 
 
     opens com.group05.currencymaster.currencymaster to javafx.fxml;

@@ -1,0 +1,9 @@
+.bg {
+  -fx-background-color: linear-gradient(to top left ,#20D0FF 0% , #30B3FF 101.96%);
+}
+
+.num-btn{
+    -fx-text-fill: #2EB9FF;
+    -fx-background-color: none;
+}
+
