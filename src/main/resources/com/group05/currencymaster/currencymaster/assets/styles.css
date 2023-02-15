@@ -3,8 +3,7 @@
 }
 
 .num-btn{
-    -fx-text-fill: #2EB9FF;
-    -fx-background-color: none;
+    -fx-text-fill: #2eb9ff;
 }
 
 .swap-btn{
@@ -18,3 +17,28 @@
     -fx-text-fill: #ffffff;
 }
 
+.combo-box,
+.choice-box {
+    -fx-font-size: 14px;
+
+}
+
+
+.combo-box .arrow,
+.choice-box .arrow {
+    -fx-background-color: #ffffff;
+}
+
+
+
+.combo-box > .list-cell {
+    -fx-text-fill: white;
+}
+
+.combo-box > .list-cell:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: black;
+}
+.choice-box > .list-cell:selected {
+    -fx-text-fill: black;
+}

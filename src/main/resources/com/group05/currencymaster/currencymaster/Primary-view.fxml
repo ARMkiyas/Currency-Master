@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Shadow?>
@@ -22,25 +23,25 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group05.currencymaster.currencymaster.PrimaryView">
    <children>
-      <VBox prefHeight="410.0" prefWidth="375.0" styleClass="bg" stylesheets="@assets/styles.css">
+      <VBox styleClass="bg" stylesheets="@assets/styles.css" AnchorPane.bottomAnchor="256.6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <BorderPane fx:id="titleBar" prefHeight="39.0">
+            <BorderPane fx:id="titleBar" onMouseDragged="#draging" onMousePressed="#titlepressed" prefHeight="39.0">
                <center>
                   <Label text="Currency master" textFill="WHITE" BorderPane.alignment="CENTER">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font name="Gotham-UltraItalic" size="15.0" />
                      </font>
                   </Label>
                </center>
                <right>
                   <HBox alignment="CENTER" prefHeight="39.0" prefWidth="64.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXButton buttonType="RAISED" onAction="#minimizeBtn" prefHeight="26.0" prefWidth="26.0" text="-" textFill="WHITE">
+                        <JFXButton buttonType="RAISED" onAction="#minimizeBtn" prefHeight="26.0" prefWidth="26.0" ripplerFill="#d1d1d1" text="-" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton buttonType="RAISED" onAction="#closeBtn" prefHeight="26.0" prefWidth="33.0" text="X" textFill="WHITE">
+                        <JFXButton buttonType="RAISED" onAction="#closeBtn" prefHeight="26.0" prefWidth="33.0" ripplerFill="#d7d7d7" text="X" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -51,10 +52,10 @@
             </BorderPane>
             <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="50.0" VBox.vgrow="ALWAYS">
                <children>
-                  <JFXComboBox />
-                  <Label alignment="TOP_LEFT" text="\$" textFill="WHITE">
+                  <JFXComboBox fx:id="convertfrom" focusColor="#66f2f7" labelFloat="true" onAction="#currencyFromChange" styleClass="combo-box" stylesheets="@assets/styles.css" unFocusColor="WHITE" />
+                  <Label fx:id="symbollable" alignment="TOP_LEFT" text="\$" textFill="WHITE">
                      <graphic>
-                        <JFXTextField fx:id="currencytextfield" alignment="BASELINE_RIGHT" focusColor="#ffffff00" prefWidth="141.0" styleClass="text-field" stylesheets="@assets/styles.css" unFocusColor="#ffffff00">
+                        <JFXTextField fx:id="currencytextfield" alignment="CENTER_RIGHT" focusColor="#ffffff00" prefColumnCount="6" styleClass="text-field" stylesheets="@assets/styles.css" text="1" unFocusColor="#ffffff00">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -80,32 +81,39 @@
                   </JFXButton>
                </children>
             </FlowPane>
-            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="120.0" stylesheets="@assets/styles.css" VBox.vgrow="ALWAYS">
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="50.0" stylesheets="@assets/styles.css" vgap="20.0" VBox.vgrow="ALWAYS">
                <children>
-                  <JFXComboBox />
-                  <Label fx:id="convertedmoney" text="60$" textFill="WHITE">
+                  <JFXComboBox fx:id="convertto" focusColor="#66f2f7" labelFloat="true" onAction="#currencyToChange" stylesheets="@assets/styles.css" unFocusColor="WHITE">
+                     <FlowPane.margin>
+                        <Insets left="10.0" />
+                     </FlowPane.margin>
+                  </JFXComboBox>
+                  <Label fx:id="convertedmoney" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="0" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <FlowPane.margin>
+                        <Insets right="10.0" />
+                     </FlowPane.margin>
                   </Label>
                </children>
             </FlowPane>
          </children>
       </VBox>
-      <GridPane alignment="CENTER" layoutY="420.0" mouseTransparent="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="420.0">
+      <GridPane alignment="CENTER" layoutX="22.0" layoutY="561.0" prefHeight="256.0" prefWidth="375.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <JFXButton layoutX="45.0" layoutY="9.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="2" textAlignment="CENTER" GridPane.columnIndex="1">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="1" textAlignment="CENTER">
                <font>
                   <Font size="29.0" />
                </font>
@@ -117,137 +125,67 @@
                   </Shadow>
                </effect>
             </JFXButton>
-            <JFXButton layoutX="170.0" layoutY="9.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="3" textAlignment="CENTER" GridPane.columnIndex="2">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="2" GridPane.columnIndex="1">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="296.0" layoutY="9.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="4" textAlignment="CENTER" GridPane.rowIndex="1">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="3" GridPane.columnIndex="2">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="45.0" layoutY="72.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="4" GridPane.rowIndex="1">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="170.0" layoutY="72.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
-                  <Font size="29.0" />
+                  <Font size="25.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="296.0" layoutY="72.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="7" textAlignment="CENTER" GridPane.rowIndex="2">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
-                  <Font size="29.0" />
+                  <Font size="26.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="45.0" layoutY="134.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="7" GridPane.rowIndex="2">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="170.0" layoutY="134.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font size="29.0" />
+                  <Font size="30.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="296.0" layoutY="134.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="." textAlignment="CENTER" GridPane.rowIndex="3">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="45.0" layoutY="196.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="." GridPane.rowIndex="3">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="170.0" layoutY="196.0" onAction="#numBackSpace" styleClass="num-btn" stylesheets="@assets/styles.css" text="&lt;" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <JFXButton buttonType="RAISED" onAction="#numBtnEvent" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
             </JFXButton>
-            <JFXButton layoutX="170.0" layoutY="9.0" onAction="#numBtnEvent" styleClass="num-btn" stylesheets="@assets/styles.css" text="1" textAlignment="CENTER" GridPane.halignment="CENTER">
+            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" ellipsisString="" onAction="#numBackSpace" ripplerFill="#a1a1a1" styleClass="num-btn" stylesheets="@assets/styles.css" text="   " GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font size="29.0" />
                </font>
-               <effect>
-                  <Shadow height="1.0" radius="0.0" width="0.0">
-                     <color>
-                        <Color red="0.21568627655506134" green="0.7372549176216125" blue="1.0" />
-                     </color>
-                  </Shadow>
-               </effect>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/images/backspace-svgrepo-com.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
          </children>
       </GridPane>
