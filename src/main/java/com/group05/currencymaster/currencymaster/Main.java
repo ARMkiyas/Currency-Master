@@ -40,6 +40,7 @@ public class Main extends Application {
                     dataHandler = new DataHandler();
 
                 } catch (Exception e) {
+                    System.out.println("Task failed with exception: " + e.getMessage());
                     throw new Exception("Task failed with exception: " + e.getMessage(), e);
                 }
                 Thread.sleep(3000);
@@ -82,8 +83,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-
-
         launch();
     }
 }
