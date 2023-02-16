@@ -11,6 +11,7 @@ import java.util.Objects;
 
 public class DataHandler {
     private static final String API_URL = "https://cdn.moneyconvert.net/api/latest.json";
+    private static final String CURRENCY_LIST = "https://raw.githubusercontent.com/ARMkiyas/Currency-Master/master/src/main/resources/Data/currencylist.json";
     private final JsonNode datalist;
     private final JsonNode currencysybols;
 
@@ -20,14 +21,18 @@ public class DataHandler {
                 .url(API_URL)
                 .method("GET", null)
                 .build();
-
+        Request request2 = new Request.Builder()
+                .url(CURRENCY_LIST)
+                .method("GET", null)
+                .build();
         try {
             Response response = client.newCall(request).execute();
             String json = Objects.requireNonNull(response.body()).string();
             ObjectMapper mapper = new ObjectMapper();
             datalist = mapper.readTree(json);
-            File file = new File("src/main/resources/Data/currencylist.json");
-            currencysybols = mapper.readTree(file);
+            Response response2 = client.newCall(request2).execute();
+            String json2 = Objects.requireNonNull(response2.body()).string();
+            currencysybols = mapper.readTree(json2);
 
 
         }
